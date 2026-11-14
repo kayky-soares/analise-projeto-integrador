@@ -33,7 +33,8 @@ Cada linha da tabela é um **trecho**, não uma linha férrea. Uma linha costuma
 ```
 .
 ├── README.md
-├── eda_cantonamento_sncf.py            # script da análise
+├── app.py                              # dashboard Streamlit
+├── eda_cantonamento_sncf.py            # script da análise (gera os PNGs)
 ├── requirements.txt                    # dependências
 ├── dados_sncf_sprint3/
 │   ├── cantonamento_ferroviario_pt_leve.csv
@@ -46,14 +47,22 @@ Cada linha da tabela é um **trecho**, não uma linha férrea. Uma linha costuma
 
 ## Como executar
 
-**Requisitos:** Python 3.9+ e as bibliotecas listadas em `requirements.txt` (`pandas`, `numpy` e `matplotlib`).
+**Requisitos:** Python 3.9+ e as bibliotecas listadas em `requirements.txt` (`pandas`, `numpy`, `matplotlib` e `streamlit`).
 
 ```bash
 pip install -r requirements.txt
 python eda_cantonamento_sncf.py dados_sncf_sprint3/cantonamento_ferroviario_pt_leve.csv graficos_eda
 ```
 
-Os dois argumentos são opcionais: o primeiro é o caminho do CSV e o segundo a pasta de saída dos gráficos. O script imprime no terminal as tabelas que alimentam cada gráfico.
+Para abrir o **dashboard interativo** (Streamlit):
+
+```bash
+streamlit run app.py
+```
+
+O navegador abre em `http://localhost:8501` com as três análises em abas e um controle para escolher quantos itens aparecem nos rankings.
+
+Para gerar apenas os PNGs com o script de linha de comando, use o comando anterior. Os dois argumentos são opcionais: o primeiro é o caminho do CSV e o segundo a pasta de saída dos gráficos. O script imprime no terminal as tabelas que alimentam cada gráfico.
 
 ## Tratamento dos dados
 
