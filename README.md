@@ -34,6 +34,7 @@ Cada linha da tabela é um **trecho**, não uma linha férrea. Uma linha costuma
 .
 ├── README.md
 ├── eda_cantonamento_sncf.py            # script da análise
+├── requirements.txt                    # dependências
 ├── dados_sncf_sprint3/
 │   ├── cantonamento_ferroviario_pt_leve.csv
 │   └── guia-base-cantonamento-ferroviario.pdf
@@ -45,10 +46,10 @@ Cada linha da tabela é um **trecho**, não uma linha férrea. Uma linha costuma
 
 ## Como executar
 
-**Requisitos:** Python 3.9+ com `pandas`, `numpy` e `matplotlib`.
+**Requisitos:** Python 3.9+ e as bibliotecas listadas em `requirements.txt` (`pandas`, `numpy` e `matplotlib`).
 
 ```bash
-pip install pandas numpy matplotlib
+pip install -r requirements.txt
 python eda_cantonamento_sncf.py dados_sncf_sprint3/cantonamento_ferroviario_pt_leve.csv graficos_eda
 ```
 
