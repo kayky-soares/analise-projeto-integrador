@@ -9,7 +9,11 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-CSV = Path(__file__).parent / "dados_sncf_sprint3" / "cantonamento_ferroviario_pt_leve.csv"
+NOME_CSV = "cantonamento_ferroviario_pt_leve.csv"
+RAIZ = Path(__file__).parent
+# Procura o CSV na raiz do repositório e, se não achar, na pasta dados_sncf_sprint3/
+CSV = next((c for c in (RAIZ / NOME_CSV, RAIZ / "dados_sncf_sprint3" / NOME_CSV) if c.exists()),
+           RAIZ / NOME_CSV)
 
 st.set_page_config(page_title="Cantonamento ferroviário – SNCF", layout="wide")
 
